@@ -105,10 +105,11 @@ cocaCola.setCarbohydrate(27);
 * 必须要设置的值不能进行验证，这样会使新对象处于一个不稳定的状态，如果忘记设置必须要设置的值，则会导致程序出错。
 * 不可以创建不可变对象，即成员变量都是final修饰，这种javabean模式的构造函数在多线程环境会出现问题。
 
-那么问题来了，有没有什么方式能够拥有以上两种方式点不足，并且又具有它们的优点呢，是有的，它就是我们的builder。<br>
-*** 3.建造模式创建对象
+*那么问题来了，有没有什么方式能够拥有以上两种方式点不足，并且又具有它们的优点呢，是有的，它就是我们的builder。*<br>
+
+### 3.建造模式创建对象
 **example1:**<br>
-不需继承的场景<br>
+*不需继承的场景*<br>
 ``` java
 public class NutritionFacts {
     private final int servingSize;
@@ -176,7 +177,7 @@ NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8)
                 .carbohydrate(27)
                 .build();
 ```                
-需要继承继承的场景<br>
+*需要继承继承的场景*<br>
 抽象类
 ``` java
 public abstract class Pizza {
