@@ -192,9 +192,9 @@ public abstract class Pizza {
             return self();
         }
 
-        abstract Pizza build(); // 子类必须实现此方法并返回this
+        abstract Pizza build(); 
 
-        protected abstract T self();
+        protected abstract T self(); // 子类必须实现此方法并返回this
     }
 
     Pizza(Builder<?> builder) {
@@ -247,7 +247,7 @@ public class Calzone extends Pizza {
         }
 
         @Override
-        public chapter2.Calzone build() {
+        public Calzone build() {
             return new Calzone(this);
         }
 
@@ -263,3 +263,21 @@ public class Calzone extends Pizza {
     }
 }
 ```
+调用：
+``` java
+NyPizza pizza = new NyPizza.Builder(SMALL)
+     .addTopping(SAUSAGE)
+     .addTopping(ONION)
+     .build();
+Calzone calzone = new Calzone.Builder()
+      .addTopping(HAM)
+      .sauceInside()
+      .build();
+```
+
+#### 3.1 优点<br>
+* 可以灵活的选择需要的构造参数，拥有javabean方式的优点，弥补伸缩式构造方式的不足
+* 必填的参数在构造时必须要传入，弥补javabena方式的不足，拥有伸缩式构造方式的优点
+* 可读性比较好。
+#### 3.2 缺点<br>
+* 会消耗一些性能。
