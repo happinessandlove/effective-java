@@ -50,7 +50,7 @@ public class Elvis {
 Supplier<Elvis> supplier = Elvis::getInstance;
 Elvis elvis = supplier.get();
 ```
-#### 实践建议：
+##### 实践建议：
 实现单例模式的序列化的时候，需要注意序列化会多次实例化类，因此要实现彻底的单例需要使用关键字`transient`修饰类变量和实力变量，并实现如下方法<br>
 ``` java
 private Object readResolve() {
