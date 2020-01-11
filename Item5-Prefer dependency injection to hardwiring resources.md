@@ -35,8 +35,6 @@ public class SpellChecker {
 
     private SpellChecker(...) {
     }// 该类不可实例化
-
-    public static SpellChecker INSTANCE = new SpellChecker(...);
     
     public void setDictionary(Lexicon dictionary){
       this.dictionary = dictionary;
