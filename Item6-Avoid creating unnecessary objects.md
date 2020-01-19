@@ -7,7 +7,7 @@ String s = new String("bikini");
 ``` java
 String s = "bikini";
 ```
-##### 错误原因:
+##### 错误原因:<br>
 错误示范中如果在循环或方法中被重复调用，会重复创建对象，而正确示范则不会，只会有一个"bikini"。
 ---
 ##### 错误示范2:
@@ -26,7 +26,7 @@ public class RomanNumerals {
         }
     }
  ```
- ##### 错误原因:
+ ##### 错误原因:<br>
  错误示范中每次调用matches函数都会创建一个Pattern对象，并且只会用一次。
 ---
  ##### 错误示范3:
@@ -47,5 +47,5 @@ public class RomanNumerals {
         return sum;
     }
  ```
-##### 错误原因:
+##### 错误原因:<br>
 错误示范中每次进行累加时都会进行拆箱和装箱操作，会耗费性能。
